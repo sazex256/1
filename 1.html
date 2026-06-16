@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Библиотека</title>
+</head>
+<body>
+    <h2>Система управления библиотекой</h2>
+    <?= $msg ?>
+    <hr>
+    <h3>Регистрация читателя</h3>
+    <form method="POST" onsubmit="return checkPhone()">
+        ФИО: <input type="text" name="name" required><br><br>
+        Телефон: <input type="text" id="phone" name="phone" required><br>
+        <small id="err" style="color:red; display:none;">Телефон слишком короткий!</small><br><br>
+        <button type="submit" name="add_reader">Добавить</button>
+    </form>
+    <hr>
+    <h3>Бронирование книги</h3>
+    <form method="POST">
+        Читатель: 
+        <select name="reader_id" required>
+            <option value="0">-- Выберите --</option>
+        </select><br><br>
+        Книга: 
+        <select name="book_id" required>
+            <option value="0">-- Выберите --</option>
+        </select><br><br>
+        <button type="submit" name="book_loan">Забронировать</button>
+    </form>
+    <hr>
+    <h3>Список читателей (Мягкое удаление)</h3>
+    <ul>
+		<a href="?delete=<?= $r['id'] ?>" style="color:red">[Удалить]</a></li>
+    </ul>
+    <script src="script.js"></script>
+</body>
+</html>
