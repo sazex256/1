@@ -11,8 +11,8 @@
     <h3>Регистрация читателя</h3>
     <form method="POST" onsubmit="return checkPhone()">
         ФИО: <input type="text" name="name" required><br><br>
-        Телефон: <input type="text" id="phone" name="phone" required><br>
-        <small id="err" style="color:red; display:none;">Телефон слишком короткий!</small><br><br>
+        Телефон: <input type="text" id="phone" name="phone" placeholder="+7(XXX)XXX-XX-XX" required><br>
+        <small id="err" style="color:red; display:none;">Неверный формат телефона! Используйте +7(XXX)XXX-XX-XX или 8XXXXXXXXXX</small><br><br>
         <button type="submit" name="add_reader">Добавить</button>
     </form>
     <hr>
@@ -31,8 +31,7 @@
     <hr>
     <h3>Список читателей (Мягкое удаление)</h3>
     <ul>
-		<a href="?delete=<?= $r['id'] ?>" style="color:red">[Удалить]</a></li>
+        <li>Иванов И.И. <a href="?delete=<?= $r['id'] ?>" style="color:red">[Удалить]</a></li>
     </ul>
-    <script src="script.js"></script>
 </body>
 </html>
