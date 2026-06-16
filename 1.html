@@ -6,32 +6,27 @@
 </head>
 <body>
     <h2>Система управления библиотекой</h2>
-    <?= $msg ?>
-    <hr>
     <h3>Регистрация читателя</h3>
     <form method="POST" onsubmit="return checkPhone()">
-        ФИО: <input type="text" name="name" required><br><br>
-        Телефон: <input type="text" id="phone" name="phone" placeholder="+7(XXX)XXX-XX-XX" required><br>
-        <small id="err" style="color:red; display:none;">Неверный формат телефона! Используйте +7(XXX)XXX-XX-XX или 8XXXXXXXXXX</small><br><br>
-        <button type="submit" name="add_reader">Добавить</button>
+        ФИО: <input type="text"><br><br>
+        Телефон: <input type="text" placeholder="+7(XXX)XXX-XX-XX"><br>
+        <button type="submit" >Добавить</button>
     </form>
-    <hr>
     <h3>Бронирование книги</h3>
     <form method="POST">
         Читатель: 
-        <select name="reader_id" required>
-            <option value="0">-- Выберите --</option>
+        <select>
+            <option>-- Выберите --</option>
         </select><br><br>
         Книга: 
-        <select name="book_id" required>
-            <option value="0">-- Выберите --</option>
+        <select>
+            <option>-- Выберите --</option>
         </select><br><br>
-        <button type="submit" name="book_loan">Забронировать</button>
+        <button type="submit">Забронировать</button>
     </form>
-    <hr>
     <h3>Список читателей (Мягкое удаление)</h3>
     <ul>
-        <li>Иванов И.И. <a href="?delete=<?= $r['id'] ?>" style="color:red">[Удалить]</a></li>
+        <li>Иванов И.И. <a href="?delete=<" >[Удалить]</a></li>
     </ul>
 </body>
 </html>
