@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Библиотека</title>
+	<style>
+	body{text-align:center}
+	</style>
 </head>
 <body>
     <h2>Система управления библиотекой</h2>
     <h3>Регистрация читателя</h3>
-    <form method="POST" onsubmit="return checkPhone()">
         ФИО: <input type="text"><br><br>
         Телефон: <input type="text" placeholder="+7(XXX)XXX-XX-XX"><br>
         <button type="submit" >Добавить</button>
@@ -28,5 +30,6 @@
     <ul>
         <li>Иванов И.И. <a href="?delete=<" >[Удалить]</a></li>
     </ul>
+    <script> alert("Привет") </script>
 </body>
 </html>
